@@ -58,31 +58,31 @@ public class Form extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
-        jMenuBar3 = new javax.swing.JMenuBar();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenuBar3 = new javax.swing.JMenuBar();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenuBar3 = new javax.swing.JMenuBar();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenuBar3 = new javax.swing.JMenuBar();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenuBar3 = new javax.swing.JMenuBar();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
+        jMenuBar5 = new javax.swing.JMenuBar();
+        jMenu11 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu12 = new javax.swing.JMenu();
+        jMenu13 = new javax.swing.JMenu();
+        jMenuBar6 = new javax.swing.JMenuBar();
+        jMenu14 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu15 = new javax.swing.JMenu();
+        jMenu16 = new javax.swing.JMenu();
+        jMenuBar7 = new javax.swing.JMenuBar();
+        jMenu17 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenu18 = new javax.swing.JMenu();
+        jMenu19 = new javax.swing.JMenu();
+        jMenuBar8 = new javax.swing.JMenuBar();
+        jMenu20 = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenu21 = new javax.swing.JMenu();
+        jMenu22 = new javax.swing.JMenu();
+        jMenuBar9 = new javax.swing.JMenuBar();
+        jMenu23 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenu24 = new javax.swing.JMenu();
+        jMenu25 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Traveling Salesman | Genetischer Algorithmus");
@@ -108,7 +108,7 @@ public class Form extends javax.swing.JFrame {
 
         list1.setBackground(new java.awt.Color(233, 229, 229));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel2.setText("X-Achse:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -131,7 +131,7 @@ public class Form extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(99, 99, 99)
                 .addComponent(jLabel6)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,107 +195,97 @@ public class Form extends javax.swing.JFrame {
         jMenu6.setText("?");
         jMenuBar3.add(jMenu6);
 
-        setJMenuBar(jMenuBar3);
+        jMenu11.setText("Datei");
 
-        jMenu5.setText("Datei");
-
-        jMenuItem3.setText("Beenden");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem5.setText("Beenden");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem3);
+        jMenu11.add(jMenuItem5);
 
-        jMenuBar3.add(jMenu5);
+        jMenuBar5.add(jMenu11);
 
-        jMenu7.setText("Bearbeiten");
-        jMenuBar3.add(jMenu7);
+        jMenu12.setText("Bearbeiten");
+        jMenuBar5.add(jMenu12);
 
-        jMenu6.setText("?");
-        jMenuBar3.add(jMenu6);
+        jMenu13.setText("?");
+        jMenuBar5.add(jMenu13);
 
-        setJMenuBar(jMenuBar3);
+        jMenu14.setText("Datei");
 
-        jMenu5.setText("Datei");
-
-        jMenuItem3.setText("Beenden");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem6.setText("Beenden");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem3);
+        jMenu14.add(jMenuItem6);
 
-        jMenuBar3.add(jMenu5);
+        jMenuBar6.add(jMenu14);
 
-        jMenu7.setText("Bearbeiten");
-        jMenuBar3.add(jMenu7);
+        jMenu15.setText("Bearbeiten");
+        jMenuBar6.add(jMenu15);
 
-        jMenu6.setText("?");
-        jMenuBar3.add(jMenu6);
+        jMenu16.setText("?");
+        jMenuBar6.add(jMenu16);
 
-        setJMenuBar(jMenuBar3);
+        jMenu17.setText("Datei");
 
-        jMenu5.setText("Datei");
-
-        jMenuItem3.setText("Beenden");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem7.setText("Beenden");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem3);
+        jMenu17.add(jMenuItem7);
 
-        jMenuBar3.add(jMenu5);
+        jMenuBar7.add(jMenu17);
 
-        jMenu7.setText("Bearbeiten");
-        jMenuBar3.add(jMenu7);
+        jMenu18.setText("Bearbeiten");
+        jMenuBar7.add(jMenu18);
 
-        jMenu6.setText("?");
-        jMenuBar3.add(jMenu6);
+        jMenu19.setText("?");
+        jMenuBar7.add(jMenu19);
 
-        setJMenuBar(jMenuBar3);
+        jMenu20.setText("Datei");
 
-        jMenu5.setText("Datei");
-
-        jMenuItem3.setText("Beenden");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem8.setText("Beenden");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem3);
+        jMenu20.add(jMenuItem8);
 
-        jMenuBar3.add(jMenu5);
+        jMenuBar8.add(jMenu20);
 
-        jMenu7.setText("Bearbeiten");
-        jMenuBar3.add(jMenu7);
+        jMenu21.setText("Bearbeiten");
+        jMenuBar8.add(jMenu21);
 
-        jMenu6.setText("?");
-        jMenuBar3.add(jMenu6);
+        jMenu22.setText("?");
+        jMenuBar8.add(jMenu22);
 
-        setJMenuBar(jMenuBar3);
+        jMenu23.setText("Datei");
 
-        jMenu5.setText("Datei");
-
-        jMenuItem3.setText("Beenden");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem9.setText("Beenden");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem3);
+        jMenu23.add(jMenuItem9);
 
-        jMenuBar3.add(jMenu5);
+        jMenuBar9.add(jMenu23);
 
-        jMenu7.setText("Bearbeiten");
-        jMenuBar3.add(jMenu7);
+        jMenu24.setText("Bearbeiten");
+        jMenuBar9.add(jMenu24);
 
-        jMenu6.setText("?");
-        jMenuBar3.add(jMenu6);
+        jMenu25.setText("?");
+        jMenuBar9.add(jMenu25);
 
-        setJMenuBar(jMenuBar3);
+        setJMenuBar(jMenuBar9);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -310,7 +300,7 @@ public class Form extends javax.swing.JFrame {
                         .addGap(79, 79, 79)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(186, 186, 186)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(list1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -384,6 +374,7 @@ private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
 }//GEN-LAST:event_jLabel1MouseClicked
 
 private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
+    repaintCities();
     jLabel2.setVisible(false);
     jLabel3.setVisible(false);
 }//GEN-LAST:event_formMouseMoved
@@ -398,7 +389,8 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             list1.replaceItem(input, i);
         }
     }
-    repaint();
+    //repaint();
+    //repaintCities();
 }//GEN-LAST:event_jButton1ActionPerformed
 
 private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -408,13 +400,19 @@ if(list1.getSelectedItem() != null) {
             JOptionPane.showMessageDialog(null, "Bitte nur einen Ort markieren!");
         } else {
             list1.remove(i);
+            staedte.remove(i);
+            repaint();
+            
         }
     }
+    //repaintCities();
+    
     System.out.println("Anzahl der Elemente: " + list1.getItemCount());
     if(list1.getItemCount() <= 0) {
         jButton1.setEnabled(false);
         jButton2.setEnabled(false);
     }
+ 
 }//GEN-LAST:event_jButton2ActionPerformed
 /**
  * Zeichnet alle Städte auf die Karte
@@ -454,6 +452,21 @@ public void paintCity(Graphics g, int x, int y) {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu12;
+    private javax.swing.JMenu jMenu13;
+    private javax.swing.JMenu jMenu14;
+    private javax.swing.JMenu jMenu15;
+    private javax.swing.JMenu jMenu16;
+    private javax.swing.JMenu jMenu17;
+    private javax.swing.JMenu jMenu18;
+    private javax.swing.JMenu jMenu19;
+    private javax.swing.JMenu jMenu20;
+    private javax.swing.JMenu jMenu21;
+    private javax.swing.JMenu jMenu22;
+    private javax.swing.JMenu jMenu23;
+    private javax.swing.JMenu jMenu24;
+    private javax.swing.JMenu jMenu25;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
@@ -461,8 +474,18 @@ public void paintCity(Graphics g, int x, int y) {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuBar jMenuBar4;
+    private javax.swing.JMenuBar jMenuBar5;
+    private javax.swing.JMenuBar jMenuBar6;
+    private javax.swing.JMenuBar jMenuBar7;
+    private javax.swing.JMenuBar jMenuBar8;
+    private javax.swing.JMenuBar jMenuBar9;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private java.awt.List list1;
     // End of variables declaration//GEN-END:variables
