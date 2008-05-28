@@ -19,6 +19,7 @@ public class Stadt {
        this.y = y;
        this.name = name;
     }
+    Stadt() { }
 
     public void setName(String name) {
         this.name = name;
