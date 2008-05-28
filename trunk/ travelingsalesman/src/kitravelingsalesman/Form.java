@@ -7,6 +7,7 @@
 package kitravelingsalesman;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 import java.util.*;
 import javax.swing.JDialog;
 /**
@@ -22,11 +23,7 @@ public class Form extends javax.swing.JFrame {
     public Form() {
         staedte = new ArrayList<Stadt>();
         initComponents();
-//        JOptionPane.showMessageDialog(this,
-//            "Bitte markieren Sie die Orte per Mausklick auf der angezeigten" +
-//            "Karte.\nLegen Sie anschließend bitte den gewünschten" +
-//            "Mutationsgrad fest.", "Willkommen", 
-//            JOptionPane.INFORMATION_MESSAGE);
+        //Timer yourTimer = new Timer(int milliseconds, ActionListener doIt);
     }
 
     /** This method is called from within the constructor to
@@ -87,6 +84,11 @@ public class Form extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Traveling Salesman | Genetischer Algorithmus");
         setResizable(false);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 formMouseMoved(evt);
@@ -111,7 +113,7 @@ public class Form extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel2.setText("X-Achse:");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel3.setText("Y-Achse:");
 
         jLabel4.setText("Markierte Orte:");
@@ -394,7 +396,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 }//GEN-LAST:event_jButton1ActionPerformed
 
 private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-if(list1.getSelectedItem() != null) {
+    if(list1.getSelectedItem() != null) {
         int i = list1.getSelectedIndex();
         if(i == -1) {
             JOptionPane.showMessageDialog(null, "Bitte nur einen Ort markieren!");
@@ -414,6 +416,14 @@ if(list1.getSelectedItem() != null) {
     }
  
 }//GEN-LAST:event_jButton2ActionPerformed
+
+private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+    JOptionPane.showMessageDialog(this,
+            "Bitte markieren Sie die Orte per Mausklick auf der angezeigten " +
+            "Karte.\nLegen Sie anschließend bitte den gewünschten " +
+            "Mutationsgrad fest.", "Willkommen", 
+            JOptionPane.INFORMATION_MESSAGE);
+}//GEN-LAST:event_formComponentShown
 /**
  * Zeichnet alle Städte auf die Karte
  */
