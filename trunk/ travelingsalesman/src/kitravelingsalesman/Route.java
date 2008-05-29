@@ -67,7 +67,7 @@ public class Route {
             
             /* Bestes Chromosom finden */
             for(int p=0; p < population; p++) {
-                if(fitness(chromosom[bestes]) < fitness(chromosom[p]))
+                if(fitness(chromosom[bestes]) > fitness(chromosom[p]))
                     bestes = p;
             }
             /* Reproduktion */
@@ -107,18 +107,19 @@ public class Route {
     /**
      * Prüft die Fitness eines Chromosoms
      */
-    private int fitness(Stadt[] chromosom) {
-        int fitness = 0;
-        /**
-         * AUFGABEN:
-         * - Teilstrecken berechnen und addieren
-         * - Gesamtstrecke sollte minimal sein
-         */
-        for(int i = 0; i < numCities; i++) {
+    private float fitness(Stadt[] chromosom) {
+        float distanz = 0;    // Distanz gesamt
+        double teilstueck;  // Distanz zwischen Ort A und B
+        double dx, dy;      // Delta-x/y als Katheten
+
+        for(int i = 0; i < numCities-1; i++) {
             /* Pythagoras summieren */
-            
+            dx = (chromosom[i].x - chromosom[i+1].x);
+            dy = (chromosom[i].y - chromosom[i+1].y);
+            teilstueck = Math.abs(Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2)));
+            distanz += teilstueck;
         }
-        return fitness;
+        return distanz;
     }
 
     public void setGeneration(int generation) {
