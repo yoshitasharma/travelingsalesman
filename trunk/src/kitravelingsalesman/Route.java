@@ -12,9 +12,10 @@ public class Route {
     private int population, generation, numCities;
     private static Random rn = new Random();        //Zufallsgenerator
                     
-    public Route(ArrayList staedte) {
+    public Route(ArrayList staedte, int numPop) {
         this.staedte = staedte;
         numCities = staedte.size();
+        population = numPop;
         chromosom = new Stadt[population][numCities];
         initPopulation();
     }
@@ -25,7 +26,7 @@ public class Route {
      */
     private int[] mischen() {
         int[] plaetze = new int[numCities];
-        int platz;
+        int platz = 0;
         boolean istFrei;                            // Platznummer frei ?
         /* Anordnungsliste leeren für neue Platzvergabe*/
         for(int i = 0; i < numCities; i++)
@@ -34,12 +35,16 @@ public class Route {
         for(int i = 0; i < numCities; i++) {
             istFrei = false;
             while(istFrei == false) {
-                platz = rn.nextInt(numCities);
-                if(plaetze[i] != platz) {
-                    plaetze[i] = platz;
-                    istFrei = true;
+                istFrei = true;
+                platz = rn.nextInt(numCities+1);
+                for(int j=0; j < numCities; j++) {
+                    if(plaetze[j] == platz) {
+                        istFrei = false;            // Platz vergeben
+                        break;
+                    }
                 }
             }
+            plaetze[i] = platz;
         }
         return plaetze;
     }
@@ -53,7 +58,7 @@ public class Route {
             /* Platzvergabe innerhalb der Population */
             for(int j=0; j < numCities; j++) {
                 for(int nr=0; nr < plaetze.length; nr++)
-                    chromosom[p][plaetze[nr]] = staedte.get(j);
+                    chromosom[p][plaetze[nr]-1] = staedte.get(j);
             }                    
         }
     }
@@ -126,10 +131,5 @@ public class Route {
 
     public void setGeneration(int generation) {
         this.generation = generation;
-    }
-
-    public void setPopulation(int population) {
-        this.population = population;
-    }
-    
+    }    
 }
