@@ -78,6 +78,8 @@ public class Form extends javax.swing.JFrame {
         jSpinner2 = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jSpinner3 = new javax.swing.JSpinner();
         jMenuBar9 = new javax.swing.JMenuBar();
         jMenu23 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
@@ -121,8 +123,8 @@ public class Form extends javax.swing.JFrame {
 
         jLabel4.setText("Markierte Orte:");
 
-        jLabel5.setText("Bestimmen Sie hier den Mutationsgrad");
-        jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mutationseinstellungen", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        jLabel5.setText("Machen Sie hier ihre Einstellungen");
+        jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Einstellungen", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
         jButton1.setText("Ändern");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -265,6 +267,8 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setText("Mutationsgrad (in %)");
+
         jMenu23.setText("Datei");
 
         jMenuItem9.setText("Beenden");
@@ -301,7 +305,6 @@ public class Form extends javax.swing.JFrame {
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(186, 186, 186)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
                     .addComponent(list1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -311,17 +314,24 @@ public class Form extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(32, 32, 32))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSpinner1, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                            .addComponent(jSpinner2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE))))
-                .addGap(51, 51, 51))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addGap(32, 32, 32))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSpinner1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                                    .addComponent(jSpinner2, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                                    .addComponent(jSpinner3, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)))
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE))))
+                .addGap(53, 53, 53))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,6 +356,10 @@ public class Form extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3))
                     .addGroup(layout.createSequentialGroup()
@@ -441,9 +455,9 @@ private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:
 }//GEN-LAST:event_formComponentShown
 
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    Route route = new Route(staedte);
+    int numPop = Integer.parseInt(String.valueOf(jSpinner1.getValue()));
+    Route route = new Route(staedte, numPop);
     route.setGeneration(Integer.parseInt(String.valueOf(jSpinner2.getValue())));
-    route.setPopulation(Integer.parseInt(String.valueOf(jSpinner1.getValue())));
     route.travelingSalesman();
 }//GEN-LAST:event_jButton3ActionPerformed
 /**
@@ -485,6 +499,7 @@ public void paintCity(Graphics g, int x, int y) {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
@@ -522,6 +537,7 @@ public void paintCity(Graphics g, int x, int y) {
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
+    private javax.swing.JSpinner jSpinner3;
     private java.awt.List list1;
     // End of variables declaration//GEN-END:variables
 
