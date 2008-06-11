@@ -57,8 +57,7 @@ public class Route {
             plaetze = mischen();
             /* Platzvergabe innerhalb der Population */
             for(int j=0; j < numCities; j++) {
-                for(int nr=0; nr < plaetze.length; nr++)
-                    chromosom[p][plaetze[nr]-1] = staedte.get(j);
+                chromosom[p][plaetze[j]-1] = staedte.get(j);
             }                    
         }
     }
@@ -71,36 +70,87 @@ public class Route {
             int bestes = 0;                  // Bestes Chromosom
             
             /* Bestes Chromosom finden */
-            for(int p=0; p < population; p++) {
-                if(fitness(chromosom[bestes]) > fitness(chromosom[p]))
+            for(int p=1; p < population; p++) {
+                if(fitness(chromosom[bestes]) > fitness(chromosom[p])) {
                     bestes = p;
+                    System.out.println("Bestes Chromosom: " + bestes);
+                }
             }
             /* Reproduktion */
             for(int p = 0; p < population; p++) {
+                int mitte;
+                boolean seite;
                 int[] staedte = new int[numCities];
                 staedte = mischen();
                 if(p != bestes) {
-                    for(int n=0; n < numCities; n++) {
-                        if(rn.nextBoolean())
+                    /* >> REKOMBINATION */
+                    /* Hälfte des Chromosoms ermitteln */
+                    if(chromosom[p].length%2 > 0)
+                        mitte = chromosom[p].length/2;
+                    else
+                        mitte = (chromosom[p].length/2)-1;
+                    /* Beste Hälfte in aktuelles Chromosom integrieren */
+                    /* Linke oder rechte Hälfte ermitteln*/
+                    seite = rn.nextBoolean();
+                    if(seite) {
+                        boolean vorhanden;
+                        int platz = 0;
+                        /* Linke Seite ersetzen*/
+                        for(int n=0; n <= mitte; n++) {
                             chromosom[p][n] = chromosom[bestes][n];
-                        /** 
-                         * Mutation 
-                         * 
-                         * Sieht momentan so aus, dass wir zwei Elemente
-                         * miteinander tauschen.
-                         */
-                        int von, zu;
-                        if(rn.nextInt() % 100 < 4) {
-                            do {
-                                von = rn.nextInt(numCities);
-                                zu = rn.nextInt(numCities);
-                            } while(von == zu);
-                            
-                            /* Beide vertauschen */
-                            tmp = chromosom[p][von];
-                            chromosom[p][von] = chromosom[p][zu];
-                            chromosom[p][zu] = tmp;
+                            platz++;
                         }
+                        /* Rechte Hälfte auf Doppeleinträge prüfen und
+                         * korrigieren */
+                        for(int k=0; k < numCities; k++) {
+                            vorhanden = false;
+                            for(int i=0; i < numCities; i++) {
+                                if(chromosom[p][k].equals(chromosom[p][i])) {
+                                    vorhanden = true;
+                                    break;
+                                }
+                            }
+                            if(!vorhanden)
+                                chromosom[p][platz++] = chromosom[p][k];
+                        }
+                    } else {
+                        boolean vorhanden;
+                        int platz = numCities--;
+                        /* Rechte Seite ersetzen */
+                        for(int n=mitte; n <= numCities; n++) {
+                            chromosom[p][n] = chromosom[bestes][n];
+                            numCities--;
+                        }
+                        /* Linke Hälfte auf Doppeleinträge prüfen und
+                         * korrigieren */
+                        for(int k=0; k < numCities; k++) {
+                            vorhanden = false;
+                            for(int i=0; i < numCities; i++) {
+                                if(chromosom[p][k].equals(chromosom[p][i])) {
+                                    vorhanden = true;
+                                    break;
+                                }
+                            }
+                            if(!vorhanden)
+                                chromosom[p][platz--] = chromosom[p][k];
+                        }
+                    }
+
+                    /** 
+                     * >> MUTATION
+                     * Zwei Elemente miteinander tauschen
+                     */
+                    int von, zu;
+                    if(rn.nextInt() % 100 < 4) {
+                        do {
+                            von = rn.nextInt(numCities);
+                            zu = rn.nextInt(numCities);
+                        } while(von == zu);
+
+                        /* Beide vertauschen */
+                        tmp = chromosom[p][von];
+                        chromosom[p][von] = chromosom[p][zu];
+                        chromosom[p][zu] = tmp;
                     }
                 }
             }
@@ -112,10 +162,12 @@ public class Route {
     /**
      * Prüft die Fitness eines Chromosoms
      */
-    private float fitness(Stadt[] chromosom) {
-        float distanz = 0;    // Distanz gesamt
+    private float fitness(Stadt[] orte) {
+        float distanz = 0;  // Distanz gesamt
         double teilstueck;  // Distanz zwischen Ort A und B
         double dx, dy;      // Delta-x/y als Katheten
+        Stadt[] chromosom = new Stadt[numCities];
+        chromosom = orte;
 
         for(int i = 0; i < numCities-1; i++) {
             /* Pythagoras summieren */
@@ -123,7 +175,6 @@ public class Route {
             dy = (chromosom[i].y - chromosom[i+1].y);
             teilstueck = Math.abs(Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2)));
             distanz += teilstueck;
-            System.out.println(i + " - " + teilstueck);
         }
         System.out.println("Distanz: " + distanz);
         return distanz;
