@@ -447,11 +447,11 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 }//GEN-LAST:event_jButton2ActionPerformed
 
 private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
-    JOptionPane.showMessageDialog(this,
-            "Bitte markieren Sie die Orte per Mausklick auf der angezeigten " +
-            "Karte.\nLegen Sie anschließend bitte den gewünschten " +
-            "Mutationsgrad fest.", "Willkommen", 
-            JOptionPane.INFORMATION_MESSAGE);
+//    JOptionPane.showMessageDialog(this,
+//            "Bitte markieren Sie die Orte per Mausklick auf der angezeigten " +
+//            "Karte.\nLegen Sie anschließend bitte den gewünschten " +
+//            "Mutationsgrad fest.", "Willkommen", 
+//            JOptionPane.INFORMATION_MESSAGE);
 }//GEN-LAST:event_formComponentShown
 
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
