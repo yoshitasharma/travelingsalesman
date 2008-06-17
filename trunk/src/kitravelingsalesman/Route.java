@@ -73,7 +73,7 @@ public class Route {
             for(int p=1; p < population; p++) {
                 if(fitness(chromosom[bestes]) > fitness(chromosom[p])) {
                     bestes = p;
-                    System.out.println("Bestes Chromosom: " + bestes);
+                    System.out.println("Änderung bestes Chromosom: " + bestes);
                 }
             }
             /* Reproduktion */
@@ -81,6 +81,8 @@ public class Route {
                 int mitte;
                 boolean seite;
                 int[] staedte = new int[numCities];
+                ArrayList liste = new ArrayList();
+                liste = this.staedte;
                 staedte = mischen();
                 if(p != bestes) {
                     /* >> REKOMBINATION */
@@ -92,9 +94,10 @@ public class Route {
                     /* Beste Hälfte in aktuelles Chromosom integrieren */
                     /* Linke oder rechte Hälfte ermitteln*/
                     seite = rn.nextBoolean();
-                    if(seite) {
+//                    if(seite) {
                         boolean vorhanden;
                         int platz = 0;
+                        int nr;
                         /* Linke Seite ersetzen*/
                         for(int n=0; n <= mitte; n++) {
                             chromosom[p][n] = chromosom[bestes][n];
@@ -103,38 +106,42 @@ public class Route {
                         /* Rechte Hälfte auf Doppeleinträge prüfen und
                          * korrigieren */
                         for(int k=0; k < numCities; k++) {
+                            nr = platz-1;
                             vorhanden = false;
-                            for(int i=0; i < numCities; i++) {
+                            for(int i=platz; i < numCities; i++) {
                                 if(chromosom[p][k].equals(chromosom[p][i])) {
                                     vorhanden = true;
                                     break;
                                 }
+                                nr++;
                             }
-                            if(!vorhanden)
-                                chromosom[p][platz++] = chromosom[p][k];
-                        }
-                    } else {
-                        boolean vorhanden;
-                        int platz = numCities--;
-                        /* Rechte Seite ersetzen */
-                        for(int n=mitte; n <= numCities; n++) {
-                            chromosom[p][n] = chromosom[bestes][n];
-                            numCities--;
-                        }
-                        /* Linke Hälfte auf Doppeleinträge prüfen und
-                         * korrigieren */
-                        for(int k=0; k < numCities; k++) {
-                            vorhanden = false;
-                            for(int i=0; i < numCities; i++) {
-                                if(chromosom[p][k].equals(chromosom[p][i])) {
-                                    vorhanden = true;
-                                    break;
-                                }
+                            if(!vorhanden) {
+                                chromosom[p][nr] = chromosom[p][k];
+                                platz++;
                             }
-                            if(!vorhanden)
-                                chromosom[p][platz--] = chromosom[p][k];
                         }
-                    }
+//                    } else {
+//                        boolean vorhanden;
+//                        int platz = numCities--;
+//                        /* Rechte Seite ersetzen */
+//                        for(int n=mitte; n <= numCities; n++) {
+//                            chromosom[p][n] = chromosom[bestes][n];
+//                            numCities--;
+//                        }
+//                        /* Linke Hälfte auf Doppeleinträge prüfen und
+//                         * korrigieren */
+//                        for(int k=0; k < numCities; k++) {
+//                            vorhanden = false;
+//                            for(int i=0; i < numCities; i++) {
+//                                if(chromosom[p][k].equals(chromosom[p][i])) {
+//                                    vorhanden = true;
+//                                    break;
+//                                }
+//                            }
+//                            if(!vorhanden)
+//                                chromosom[p][platz--] = chromosom[p][k];
+//                        }
+//                    }
 
                     /** 
                      * >> MUTATION
