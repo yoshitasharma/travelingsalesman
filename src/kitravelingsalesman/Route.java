@@ -10,7 +10,7 @@ public class Route {
     private ArrayList<Stadt> staedte;               // Liste mit Wepunkten
     private Stadt[][] chromosom;                    // Chromosomenpopulation
     private int population, generation, numCities;
-    private static Random rn = new Random();        //Zufallsgenerator
+    private static Random rn = new Random();        // Zufallsgenerator
                     
     public Route(ArrayList staedte, int numPop) {
         this.staedte = staedte;
@@ -80,6 +80,7 @@ public class Route {
             for(int p = 0; p < population; p++) {
                 int mitte;
                 boolean seite;
+                Stadt[] new_gen = new Stadt[numCities];
                 int[] staedte = new int[numCities];
                 ArrayList liste = new ArrayList();
                 liste = this.staedte;
@@ -88,19 +89,20 @@ public class Route {
                     /* >> REKOMBINATION */
                     /* Hälfte des Chromosoms ermitteln */
                     if(chromosom[p].length%2 > 0)
-                        mitte = chromosom[p].length/2;
-                    else
                         mitte = (chromosom[p].length/2)-1;
+                    else
+                        mitte = chromosom[p].length/2;
                     /* Beste Hälfte in aktuelles Chromosom integrieren */
                     /* Linke oder rechte Hälfte ermitteln*/
                     seite = rn.nextBoolean();
 //                    if(seite) {
                         boolean vorhanden;
+                        
                         int platz = 0;
                         int nr;
                         /* Linke Seite ersetzen*/
-                        for(int n=0; n <= mitte; n++) {
-                            chromosom[p][n] = chromosom[bestes][n];
+                        for(int n=0; n < mitte; n++) {
+                            new_gen[n] = chromosom[bestes][n];
                             platz++;
                         }
                         /* Rechte Hälfte auf Doppeleinträge prüfen und
@@ -109,17 +111,18 @@ public class Route {
                             nr = platz-1;
                             vorhanden = false;
                             for(int i=platz; i < numCities; i++) {
-                                if(chromosom[p][k].equals(chromosom[p][i])) {
+                                if(chromosom[p][k].equals(new_gen[i])) {
                                     vorhanden = true;
                                     break;
                                 }
                                 nr++;
                             }
                             if(!vorhanden) {
-                                chromosom[p][nr] = chromosom[p][k];
+                                new_gen[nr-1] = chromosom[p][k];
                                 platz++;
                             }
                         }
+                        chromosom[p] = new_gen;
 //                    } else {
 //                        boolean vorhanden;
 //                        int platz = numCities--;
