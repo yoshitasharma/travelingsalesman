@@ -80,11 +80,9 @@ public class Form extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jSpinner3 = new javax.swing.JSpinner();
-        jMenuBar9 = new javax.swing.JMenuBar();
-        jMenu23 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu24 = new javax.swing.JMenu();
-        jMenu25 = new javax.swing.JMenu();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Traveling Salesman | Genetischer Algorithmus");
@@ -114,6 +112,7 @@ public class Form extends javax.swing.JFrame {
         });
 
         list1.setBackground(new java.awt.Color(233, 229, 229));
+        list1.setFont(new java.awt.Font("Dialog", 1, 14));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel2.setText("X-Achse:");
@@ -254,9 +253,9 @@ public class Form extends javax.swing.JFrame {
 
         jLabel6.setText("Populationsgröße");
 
-        jSpinner1.setValue(10);
+        jSpinner1.setValue(5);
 
-        jSpinner2.setValue(100);
+        jSpinner2.setValue(10);
 
         jLabel7.setText("Anzahl der Generationen");
 
@@ -269,25 +268,19 @@ public class Form extends javax.swing.JFrame {
 
         jLabel8.setText("Mutationsgrad (in %)");
 
-        jMenu23.setText("Datei");
+        jLabel9.setText("Gesamtstrecke:");
 
-        jMenuItem9.setText("Beenden");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 153, 0));
+
+        jButton4.setText("Neue Berechnung");
+        jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        jButton4.setEnabled(false);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
-        jMenu23.add(jMenuItem9);
-
-        jMenuBar9.add(jMenu23);
-
-        jMenu24.setText("Bearbeiten");
-        jMenuBar9.add(jMenu24);
-
-        jMenu25.setText("?");
-        jMenuBar9.add(jMenu25);
-
-        setJMenuBar(jMenuBar9);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -303,35 +296,36 @@ public class Form extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(186, 186, 186)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(list1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addContainerGap(151, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(jLabel4)
+                            .addComponent(list1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addGap(32, 32, 32))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSpinner1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                                    .addComponent(jSpinner2, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                                    .addComponent(jSpinner3, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)))
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE))))
-                .addGap(53, 53, 53))
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSpinner3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                                    .addComponent(jSpinner2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                                    .addComponent(jSpinner1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(26, 26, 26))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -342,33 +336,38 @@ public class Form extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addGap(2, 2, 2)
                         .addComponent(list1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -393,14 +392,18 @@ private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
             "\nBitte vergeben Sie einen Namen:");
     Stadt stadt = new Stadt(evt.getX(), evt.getY(), input);
     staedte.add(stadt);
-    paintCity(jLabel1.getGraphics(), evt.getX(), evt.getY());    
+    Color farbe;
+    if(staedte.size() > 1)
+        farbe = Color.RED;
+    else
+        farbe = Color.BLUE;
+
+    paintCity(jLabel1.getGraphics(), evt.getX(), evt.getY(), farbe);    
     list1.add(stadt.name);
     if(list1.getItemCount() > 0) {
         jButton1.setEnabled(true);
         jButton2.setEnabled(true);
-    }
-    for(Stadt ort:staedte) {
-        System.out.println(ort.name+"["+ort.x+", "+ort.y+"]");
+        jButton4.setEnabled(true);
     }
 }//GEN-LAST:event_jLabel1MouseClicked
 
@@ -436,17 +439,19 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             
         }
     }
-    //repaintCities();
     
     System.out.println("Anzahl der Elemente: " + list1.getItemCount());
     if(list1.getItemCount() <= 0) {
         jButton1.setEnabled(false);
         jButton2.setEnabled(false);
+        jButton4.setEnabled(false);
     }
  
 }//GEN-LAST:event_jButton2ActionPerformed
 
 private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+    jLabel9.setVisible(false);
+    jLabel10.setVisible(false);
 //    JOptionPane.showMessageDialog(this,
 //            "Bitte markieren Sie die Orte per Mausklick auf der angezeigten " +
 //            "Karte.\nLegen Sie anschließend bitte den gewünschten " +
@@ -456,16 +461,62 @@ private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:
 
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
     int numPop = Integer.parseInt(String.valueOf(jSpinner1.getValue()));
+    Stadt[] bestes;
     Route route = new Route(staedte, numPop);
     route.setGeneration(Integer.parseInt(String.valueOf(jSpinner2.getValue())));
-    route.travelingSalesman();
+    route.setMutationsrate(Integer.parseInt(String.valueOf(jSpinner3.getValue())));
+    bestes = route.travelingSalesman();
+    clearMap();
+    repaintCities();
+    drawConnections(jLabel1.getGraphics(), bestes);
+    jLabel9.setVisible(true);
+    jLabel10.setVisible(true);
+    jLabel10.setText((float)(Math.round((route.getGesamtstrecke()*100))/100f) + " km");
+    for(int i=0; i < staedte.size(); i++) {
+        System.out.print(bestes[i].name + " -> ");
+    }
 }//GEN-LAST:event_jButton3ActionPerformed
+
+private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    staedte.clear();
+    list1.removeAll();
+    jLabel10.setVisible(false);
+    jLabel9.setVisible(false);
+    jButton1.setEnabled(false);
+    jButton2.setEnabled(false);
+    repaintCities();
+    clearMap();
+    jButton4.setEnabled(false);
+}//GEN-LAST:event_jButton4ActionPerformed
+/**
+ * Säubert die Karte von allen Punkten und Strecken
+ */
+private void clearMap() {
+    jLabel1.paint(jLabel1.getGraphics());
+}
 /**
  * Zeichnet alle Städte auf die Karte
  */
-public void repaintCities() {
-    for(Stadt ort:staedte)
-        paintCity(jLabel1.getGraphics(), ort.x, ort.y);
+private void repaintCities() {
+    int i=0;
+    Color farbe;
+    for(Stadt ort:staedte) {
+        if(i == 0)
+            farbe = Color.BLUE;
+        else
+            farbe = Color.RED;
+        paintCity(jLabel1.getGraphics(), ort.x, ort.y, farbe);
+        i++;
+    }        
+}
+public void drawConnections(Graphics g, Stadt[] route) {
+    g.setColor(Color.GREEN);
+    for(int i=0; i < staedte.size()-1; i++) {
+        g.drawLine(route[i].x, route[i].y, route[i+1].x, route[i+1].y);
+    }
+    /* End- zu Startpunkt */
+    g.drawLine(route[staedte.size()-1].x, route[staedte.size()-1].y, 
+                route[0].x, route[0].y);
 }
 /**
  * Zeichnet einen Punkt an die gegebene Koordinate und...
@@ -473,8 +524,8 @@ public void repaintCities() {
  * @int x
  * @int y
  */
-public void paintCity(Graphics g, int x, int y) {
-    g.setColor(Color.RED);
+private void paintCity(Graphics g, int x, int y, Color farbe) {
+    g.setColor(farbe);
     g.fillOval(x-4, y-4, 8, 8);
 }
     /**
@@ -492,7 +543,9 @@ public void paintCity(Graphics g, int x, int y) {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -500,6 +553,7 @@ public void paintCity(Graphics g, int x, int y) {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
@@ -513,9 +567,6 @@ public void paintCity(Graphics g, int x, int y) {
     private javax.swing.JMenu jMenu20;
     private javax.swing.JMenu jMenu21;
     private javax.swing.JMenu jMenu22;
-    private javax.swing.JMenu jMenu23;
-    private javax.swing.JMenu jMenu24;
-    private javax.swing.JMenu jMenu25;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
@@ -527,14 +578,12 @@ public void paintCity(Graphics g, int x, int y) {
     private javax.swing.JMenuBar jMenuBar6;
     private javax.swing.JMenuBar jMenuBar7;
     private javax.swing.JMenuBar jMenuBar8;
-    private javax.swing.JMenuBar jMenuBar9;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JSpinner jSpinner3;
