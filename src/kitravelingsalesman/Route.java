@@ -5,6 +5,11 @@ import java.util.Random;
 /**
  * @version 1.0
  * @author Alexander Richter
+ *
+ * Klasse: Route
+ *
+ * Zweck: Diese Klasse berechnet das Rundreiseproblem mithilfe des
+ * genetischen Algorithmus.
  */
 public class Route {
     private ArrayList<Stadt> staedte;               // Liste mit Wepunkten
@@ -92,8 +97,9 @@ public class Route {
                 staedte = mischen();
                 if(p != bestes) {
                     /* >> REKOMBINATION */
-                    /* Linke Hälfte des besten in 
-                       aktuelles Chromosom integrieren */
+                    if(rn.nextBoolean()) {
+                        /* Linke Hälfte des besten in 
+                           aktuelles Chromosom integrieren */
                         boolean vorhanden;                        
                         int platz = 0;
                         /* Linke Seite ersetzen*/
@@ -118,7 +124,35 @@ public class Route {
                                 new_gen[i] = chromosom[p][k];
                             }
                         }
-                        chromosom[p] = new_gen;
+                    } else {
+                        /* Rechte Hälfte des besten in
+                           aktuelles Chromosom integrieren */
+                        boolean vorhanden;
+                        int platz = numCities-1;
+                        /* Rechte Seite ersetzen */
+                        for(int n=numCities-1; n > mitte; n--) {
+                            new_gen[n] = chromosom[bestes][n];
+                            platz--;
+                        }
+                        /* Linke Hälfte auf Doppeleinträge prüfen und
+                           korrigieren */
+                        for(int k=0; k < numCities; k++) {
+                            vorhanden = false;
+                            int i = numCities-1;
+                            while(new_gen[i] != null) {
+                                    if(new_gen[i] == chromosom[p][k]) {
+                                        vorhanden = true;
+                                        break;
+                                    } else {
+                                        i--;
+                                    }
+                            }
+                            if(!vorhanden) {
+                                new_gen[i] = chromosom[p][k];
+                            }
+                        }
+                    }
+                            chromosom[p] = new_gen;
                     /** 
                      * >> MUTATION
                      * Zwei Elemente miteinander tauschen
